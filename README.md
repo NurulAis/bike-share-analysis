@@ -1,4 +1,4 @@
-# Bike Share Dashboard
+# Bike Share Dashboard :bicyclist:
 
 ## Setup Environtment - Shell/Terminal
 
