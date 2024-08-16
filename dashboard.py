@@ -124,21 +124,19 @@ with col2:
 
 ############################### JAM DAN HARI YANG PALING BANYAK PESEPEDA ########################
 st.subheader('Jam dan Hari yang disukai pesepeda')
-col1, col2 = st.columns(2)
 
-with col1 :
-    fig, ax = plt.subplots()
-    bike_hour = hour_df.groupby(by='hr')['cnt'].sum()
-    x = bike_hour.index
-    y = bike_hour.values
-    plt.grid(True)
-    plt.plot(x,y)
-    plt.xticks(range(0,24))
-    plt.xlabel('Jam')
-    plt.ylabel('Jumlah Pesepeda')
-    plt.title('Persebaran Pesepeda Tiap Jam')
-    plt.show()
-    st.pyplot(fig)
+fig, ax = plt.subplots(figsize=(12,5))
+bike_hour = hour_df.groupby(by='hr')['cnt'].sum()
+x = bike_hour.index
+y = bike_hour.values
+plt.grid(True)
+plt.plot(x,y)
+plt.xticks(range(0,24))
+plt.xlabel('Jam')
+plt.ylabel('Jumlah Pesepeda')
+plt.title('Persebaran Pesepeda Tiap Jam')
+plt.show()
+st.pyplot(fig)
 
 weekday_dict = {
     0 : 'Minggu',
@@ -152,21 +150,20 @@ weekday_dict = {
 # hour_df['weathersit'] = hour_df['weathersit'].map(season_mapping)
 day_df['weekday'] = day_df['weekday'].map(weekday_dict)
 
-with col2 :
-    fig, ax = plt.subplots()
-    fav_day = day_df.groupby(by='weekday')['cnt'].sum().sort_values(ascending=False)
-    x = fav_day.index
-    y = fav_day.values
 
-    ax = sns.barplot(x=x,y=y)
-    for index, value in enumerate(y):
-        plt.text(x = index, y = value, s=f'{value}', ha='center')
+fig, ax = plt.subplots()
+fav_day = day_df.groupby(by='weekday')['cnt'].sum().sort_values(ascending=False)
+x = fav_day.index
+y = fav_day.values
 
-    plt.xlabel('Hari')
-    plt.ylabel('Jumlah Pesepeda')
-    plt.title('Persebaran Pesepeda Berdasarkan Hari')  
-    plt.show()
-    st.pyplot(fig)
+ax = sns.barplot(x=x,y=y)
+for index, value in enumerate(y):
+    plt.text(x = index, y = value, s=f'{value}', ha='center')
+plt.xlabel('Hari')
+plt.ylabel('Jumlah Pesepeda')
+plt.title('Persebaran Pesepeda Berdasarkan Hari')  
+plt.show()
+st.pyplot(fig)
 
 
 
