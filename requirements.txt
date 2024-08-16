@@ -3,4 +3,4 @@ numpy==2.0.1
 seaborn==0.13.2
 streamlit==1.31.1
 streamlit==1.37.1
-~andas==2.0.2
+pandas==2.0.2
