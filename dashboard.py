@@ -36,6 +36,7 @@ hour_df = pd.read_csv('./dataset/hour.csv')
 #         max_value=max_date,
 #         value=[min_date, max_date]
 #     )
+#print
 
 ################################## BAGIAN 1 #########################################
 st.subheader('Jumlah Pesepeda Tahun 2011 - 2012')
