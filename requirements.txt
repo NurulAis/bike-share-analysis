@@ -1,0 +1,4 @@
+matplotlib==3.7.1
+numpy==2.0.1
+seaborn==0.13.2
+~andas==2.0.2
