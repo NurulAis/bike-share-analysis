@@ -13,3 +13,7 @@ pip install -r requirements.txt
 ```
 streamlit run dashboard.py
 ```
+
+## Link Dashboard
+you can access dashboard with this link :
+https://bike-share-analysis-mblap8wwzpvavkubywgbvx.streamlit.app/
