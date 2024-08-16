@@ -14,28 +14,28 @@ hour_df = pd.read_csv('./dataset/hour.csv')
 
 
 ########################## MENGURUTKAN DATAFRAME SESUAI DENGAN DTEDAY #######################
-datetime_columns = ['dteday']
-day_df.sort_values(by='dteday', inplace=True)
-day_df.reset_index(inplace=True)
-hour_df.sort_values(by='dteday', inplace=True)
-hour_df.reset_index(inplace=True)
+# datetime_columns = ['dteday']
+# day_df.sort_values(by='dteday', inplace=True)
+# day_df.reset_index(inplace=True)
+# hour_df.sort_values(by='dteday', inplace=True)
+# hour_df.reset_index(inplace=True)
 
-for column in datetime_columns:
-    day_df[column] = pd.to_datetime(day_df[column])
-    hour_df[column] = pd.to_datetime(hour_df[column])
+# for column in datetime_columns:
+#     day_df[column] = pd.to_datetime(day_df[column])
+#     hour_df[column] = pd.to_datetime(hour_df[column])
 
 
 ################### MEMBUAT KOMPONEN FILTER ##########################################
-min_date = hour_df['dteday'].min()
-max_date = hour_df['dteday'].max()
+# min_date = hour_df['dteday'].min()
+# max_date = hour_df['dteday'].max()
 
-with st.sidebar:
-    # ambil start date dan end date dari date input
-    start_date, end_date = st.date_input(
-        label= 'Rentang Waktu', min_value=min_date,
-        max_value=max_date,
-        value=[min_date, max_date]
-    )
+# with st.sidebar:
+#     # ambil start date dan end date dari date input
+#     start_date, end_date = st.date_input(
+#         label= 'Rentang Waktu', min_value=min_date,
+#         max_value=max_date,
+#         value=[min_date, max_date]
+#     )
 
 ################################## BAGIAN 1 #########################################
 st.subheader('Jumlah Pesepeda Tahun 2011 - 2012')
